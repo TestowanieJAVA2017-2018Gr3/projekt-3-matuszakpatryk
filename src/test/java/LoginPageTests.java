@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginPageTests
 {
@@ -21,6 +23,7 @@ public class LoginPageTests
     public void SignInWithoutEmailTest() throws Exception {
         LoginPageObject loginPage = PageFactory.initElements(driver, LoginPageObject.class);
         loginPage.SignIn("", "");
+        assertTrue(loginPage.LoginWithoutDataAssert());
     }
 
     @AfterAll
