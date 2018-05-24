@@ -19,7 +19,12 @@ public class LoginPageObject
     @FindBy(id = "WelcomeMessage")
     private WebElement welcomeMessage;
 
+    @FindBy(id = "Password-error")
+    private WebElement passwordPrompt;
+
     private List<WebElement> liItems;
+
+    private WebElement invalidPassword;
 
     public LoginPageObject(WebDriver driver)
     {
@@ -35,7 +40,7 @@ public class LoginPageObject
         password.submit();
     }
 
-    public boolean LoginWithoutDataAssert()
+    public boolean SignInWithoutDataAssert()
     {
         liItems = driver.findElements(By.xpath("//div[@id='Test']/ul/li"));
         for (WebElement element: liItems)
@@ -47,4 +52,16 @@ public class LoginPageObject
         }
         return true;
     }
+
+    public String SignInWithoutPasswordAssert()
+    {
+        return passwordPrompt.getText();
+    }
+
+    public String SignInWithIncorrectPasswordAssert()
+    {
+        invalidPassword = driver.findElement(By.xpath("//div[@id='Test']/ul/li"));
+        return invalidPassword.getText();
+    }
+
 }
