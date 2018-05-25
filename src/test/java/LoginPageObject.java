@@ -64,4 +64,10 @@ public class LoginPageObject
         return invalidPassword.getText();
     }
 
+    public String SignInWithCorrectDataAssert()
+    {
+        return welcomeMessage.getText();
+    }
+
+
 }
