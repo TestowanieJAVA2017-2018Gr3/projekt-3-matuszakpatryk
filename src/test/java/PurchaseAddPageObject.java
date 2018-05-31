@@ -20,14 +20,20 @@ public class PurchaseAddPageObject
     @FindBy(name = "Password")
     private WebElement password;
 
-    @FindBy(name = "SellerID")
-    private Select sellerSelect;
+    @FindBy(id = "Create")
+    private WebElement createButton;
 
-    @FindBy(name = "CustomerID")
-    private Select customerSelect;
+    @FindBy(id = "SellerID")
+    private WebElement seller;
 
-    @FindBy(name = "ProductID")
-    private Select productSelect;
+    @FindBy(id = "CustomerID")
+    private WebElement customer;
+
+    @FindBy(id = "ProductID")
+    private WebElement product;
+
+    @FindBy(id = "Submit")
+    private WebElement Submit;
 
     @FindBy(id = "PurchaseDate-error")
     private WebElement datePrompt;
@@ -62,13 +68,14 @@ public class PurchaseAddPageObject
 
     public void AddPurchaseWithoutDate()
     {
-        WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='container body-content]/a")));
-        System.out.println(button.getAttribute("href"));
-        button.click();
+        createButton.click();
+        Select sellerSelect = new Select(seller);
         sellerSelect.selectByValue("3");
+        Select customerSelect = new Select(customer);
         customerSelect.selectByValue("6");
+        Select productSelect = new Select(product);
         productSelect.selectByValue("2");
-        driver.findElement(By.className("btn btn-success btn-sm")).submit();
+        Submit.submit();
     }
 
     public WebElement AddPurchaseWithoutDateAssert()
