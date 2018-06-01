@@ -30,7 +30,7 @@ public class LoginPageObject
     {
         this.driver = driver;
         driver.get("http://flowershopmfi.azurewebsites.net/account/login");
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public void SignIn(String Email, String Password)

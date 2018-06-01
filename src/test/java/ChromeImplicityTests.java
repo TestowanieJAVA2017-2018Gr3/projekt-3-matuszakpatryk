@@ -1,11 +1,13 @@
 
+import io.appium.java_client.AppiumDriver;
+import io.github.bonigarcia.SeleniumExtension;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,17 +15,22 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ChromeTests
+import io.github.bonigarcia.SeleniumExtension;
+
+@ExtendWith(SeleniumExtension.class)
+public class ChromeImplicityTests
 {
-    private static WebDriver driver;
+    private static ChromeDriver driver;
+
+    public ChromeImplicityTests(ChromeDriver driver) {
+        this.driver = driver;
+    }
 
     @BeforeAll
     public static void setUpBeforeClass() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
     }
 
     @Test
@@ -63,12 +70,12 @@ public class ChromeTests
         PurchaseAddPageObject pageObject = PageFactory.initElements(driver, PurchaseAddPageObject.class);
         pageObject.SignInAsAdminAndNavigateToAddPage();
         pageObject.AddPurchaseWithoutDate();
-        //assertEquals(pageObject.AddPurchaseWithoutDateAssert().getText(), "Enter Date");
-
+        assertEquals(pageObject.AddPurchaseWithoutDateAssert().getText(), "Enter Date");
     }
 
     @AfterAll
-    public static void tearDownAfterClass() throws Exception {
+    public static void tearDownAfterClass() throws Exception
+    {
         driver.quit();
     }
 
