@@ -18,23 +18,38 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>4.3</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave.site</groupId>
+            <artifactId>jbehave-site-resources</artifactId>
+            <version>3.3</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
             <version>${junit.vintage.version}</version>
-            <scope>test</scope>
         </dependency>
         <!-- Only required to run tests in an IDE that bundles an older version -->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
             <version>${junit.platform.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -51,7 +66,6 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>selenium-jupiter</artifactId>
             <version>2.1.1</version>
-            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
