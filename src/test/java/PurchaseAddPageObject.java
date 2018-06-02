@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,7 +40,7 @@ public class PurchaseAddPageObject
     public PurchaseAddPageObject(WebDriver driver)
     {
         this.driver = driver;
-        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
+        driver.get("http://flowershopapp.azurewebsites.net/account/login");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -49,7 +48,7 @@ public class PurchaseAddPageObject
 
     public void SignInAsAdminAndNavigateToAddPage()
     {
-        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
+        driver.get("http://flowershopapp.azurewebsites.net/account/login");
         email.sendKeys("testtest@wp.pl");
         password.sendKeys("Test123!");
         password.submit();
@@ -63,7 +62,6 @@ public class PurchaseAddPageObject
                 driver.navigate().to(element.getAttribute("href"));
             }
         }
-
     }
 
     public void AddPurchaseWithoutDate()

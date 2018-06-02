@@ -8,15 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChromeSteps extends Steps
 {
     private static WebDriver driver;
-
-
 
     @Given("Mam webdrivera")
     public void givenIHaveWebsite() throws Exception

@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SeleniumExtension.class)
 public class PhantomJSFluentTests
 {
-
     private PhantomJSDriver driver;
 
     public PhantomJSFluentTests(PhantomJSDriver driver) {

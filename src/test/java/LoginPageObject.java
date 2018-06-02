@@ -29,7 +29,7 @@ public class LoginPageObject
     public LoginPageObject(WebDriver driver)
     {
         this.driver = driver;
-        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
+        driver.get("http://flowershopapp.azurewebsites.net/account/login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

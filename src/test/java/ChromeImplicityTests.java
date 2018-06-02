@@ -1,11 +1,8 @@
-
-import io.appium.java_client.AppiumDriver;
 import io.github.bonigarcia.SeleniumExtension;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +14,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import io.github.bonigarcia.SeleniumExtension;
-
 @ExtendWith(SeleniumExtension.class)
 public class ChromeImplicityTests
 {
@@ -26,11 +21,6 @@ public class ChromeImplicityTests
 
     public ChromeImplicityTests(ChromeDriver driver) {
         this.driver = driver;
-    }
-
-    @BeforeAll
-    public static void setUpBeforeClass() throws Exception {
-        //driver = new ChromeDriver();
     }
 
     @Test
