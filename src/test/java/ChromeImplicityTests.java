@@ -63,6 +63,16 @@ public class ChromeImplicityTests
         assertEquals(pageObject.AddPurchaseWithoutDateAssert().getText(), "Enter Date");
     }
 
+    @Test
+    public void AddPurchaseWithCorrectData()
+    {
+        PurchaseAddPageObject pageObject = PageFactory.initElements(driver, PurchaseAddPageObject.class);
+        pageObject.SignInAsAdminAndNavigateToAddPage();
+        pageObject.AddPurchaseWithDate();
+        assertTrue(pageObject.AddPurchaseWithDateAssert().contains("11/11/2011"));
+        pageObject.DeleteLastItem();
+    }
+
     @AfterAll
     public static void tearDownAfterClass() throws Exception
     {
