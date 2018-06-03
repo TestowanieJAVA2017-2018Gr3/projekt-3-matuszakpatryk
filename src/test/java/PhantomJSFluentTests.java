@@ -1,4 +1,5 @@
 import io.github.bonigarcia.SeleniumExtension;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -39,13 +40,13 @@ public class PhantomJSFluentTests
 
     @BeforeEach
     public void setDefaultPage() {
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Email")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Password")));
         driver.findElement(By.id("Email")).sendKeys("testtest@wp.pl");
         driver.findElement(By.id("Password")).sendKeys("Test123!");
         driver.findElement(By.id("Password")).submit();
-        driver.get("http://flowershopapp.azurewebsites.net/customer");
+        driver.get("http://flowershopmfi.azurewebsites.net/customer");
     }
 
     @Test

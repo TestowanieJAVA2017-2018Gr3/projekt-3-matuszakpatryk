@@ -28,7 +28,7 @@ public class CloudTests
         caps.setCapability("version", "latest");
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         driver.findElement(By.name("Email")).sendKeys("useruser@wp.pl");
         driver.findElement(By.name("Password")).submit();
         WebElement passwordPrompt = driver.findElement(By.id("Password-error"));
@@ -43,7 +43,7 @@ public class CloudTests
         caps.setCapability("version", "latest");
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         driver.findElement(By.name("Email")).sendKeys("useruser@wp.pl");
         driver.findElement(By.name("Password")).submit();
         WebElement passwordPrompt = driver.findElement(By.id("Password-error"));
@@ -58,8 +58,8 @@ public class CloudTests
         caps.setCapability("version", "latest");
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
-        driver.findElement(By.name("Email")).sendKeys("useruser@wp.pl");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
+        driver.findElement(By.name("Password")).sendKeys("useruser@wp.pl");
         driver.findElement(By.name("Password")).submit();
         WebElement emailrompt = driver.findElement(By.id("Email-error"));
         assertThat(emailrompt.getText(), containsString("field"));
@@ -73,7 +73,7 @@ public class CloudTests
         caps.setCapability("version", "latest");
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         driver.findElement(By.name("Password")).sendKeys("useruser@wp.pl");
         driver.findElement(By.name("Password")).submit();
         WebElement emailrompt = driver.findElement(By.id("Email-error"));

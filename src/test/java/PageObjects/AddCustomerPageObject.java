@@ -41,7 +41,7 @@ public class AddCustomerPageObject
     public AddCustomerPageObject(WebDriver driver)
     {
         this.driver = driver;
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
@@ -54,7 +54,7 @@ public class AddCustomerPageObject
 
     public void GoToCustomerPageAndClickCreateButton()
     {
-        driver.get("http://flowershopapp.azurewebsites.net/customer");
+        driver.get("http://flowershopmfi.azurewebsites.net/customer");
         CreateCustomer.click();
     }
 

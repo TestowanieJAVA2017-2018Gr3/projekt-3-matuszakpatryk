@@ -30,8 +30,8 @@ public class HtmlUnitExplicityTests
     }
 
     @BeforeEach
-    public void setDefaultPage() {
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+    public void setupBeforeTest() {
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Email")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Password")));
         driver.findElement(By.id("Email")).sendKeys("testtest@wp.pl");
@@ -40,14 +40,14 @@ public class HtmlUnitExplicityTests
     }
 
     @Test
-    public void checkLoggedUser()
+    public void checkLoggedUserTest_PageShouldContainLoggedUserEmail()
     {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("UserMessage")));
         assertThat(driver.findElement(By.id("UserMessage")).getText(), containsString("testtest@wp.pl"));
     }
 
     @Test
-    public void signOutUser()
+    public void signOutUserTest_PageShouldNotHaveUserMessage()
     {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SignOutButton")));
         driver.findElement(By.id("SignOutButton")).click();

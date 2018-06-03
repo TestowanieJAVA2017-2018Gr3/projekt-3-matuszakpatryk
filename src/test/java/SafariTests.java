@@ -28,14 +28,14 @@ public class SafariTests
 
     @BeforeEach
     public void setDefaultPage() {
-        driver.get("http://flowershopapp.azurewebsites.net/account/login");
+        driver.get("http://flowershopmfi.azurewebsites.net/account/login");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Email")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Password")));
         driver.findElement(By.id("Email")).sendKeys("testtest@wp.pl");
         driver.findElement(By.id("Password")).sendKeys("Test123!");
         driver.findElement(By.id("Password")).submit();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("UserMessage")));
-        driver.get("http://flowershopapp.azurewebsites.net/customer");
+        driver.get("http://flowershopmfi.azurewebsites.net/customer");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CreateCustomer")));
         driver.findElement(By.id("CreateCustomer")).click();
     }

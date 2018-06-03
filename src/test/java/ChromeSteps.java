@@ -68,7 +68,7 @@ public class ChromeSteps extends Steps
         driver = new ChromeDriver();
         LoginPageObject loginPage = PageFactory.initElements(driver, LoginPageObject.class);
         loginPage.SignIn("testtest@wp.pl", "Test123!");
-        driver.get("http://flowershopapp.azurewebsites.net/customer");
+        driver.get("http://flowershopmfi.azurewebsites.net/customer");
     }
 
     @When("Nic nie wpisze")
@@ -96,7 +96,7 @@ public class ChromeSteps extends Steps
 
     @When("Wejde na strone glowna")
     public void goToHomePage() throws Exception {
-        driver.get("http://flowershopapp.azurewebsites.net");
+        driver.get("http://flowershopmfi.azurewebsites.net");
     }
 
     @Then("Tytul bedzie poprawny")
@@ -117,7 +117,7 @@ public class ChromeSteps extends Steps
     public void goToSellerPageAfterLogin() throws Exception {
         LoginPageObject loginPage = PageFactory.initElements(driver, LoginPageObject.class);
         loginPage.SignIn("useruser@wp.pl", "User123!");
-        driver.get("http://flowershopapp.azurewebsites.net/seller");
+        driver.get("http://flowershopmfi.azurewebsites.net/seller");
     }
 
     @Then("Wyskoczy access denied")
@@ -138,7 +138,7 @@ public class ChromeSteps extends Steps
     public void goToCustomerAfterLogin() throws Exception {
         LoginPageObject loginPage = PageFactory.initElements(driver, LoginPageObject.class);
         loginPage.SignIn("useruser@wp.pl", "User123!");
-        driver.get("http://flowershopapp.azurewebsites.net/customer");
+        driver.get("http://flowershopmfi.azurewebsites.net/customer");
     }
 
     @Then("Nie bedzie edycji itp")
